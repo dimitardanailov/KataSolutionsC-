@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecodeMorseCode", "DecodeMorseCode\DecodeMorseCode.csproj", "{32C9F752-1A2E-4205-9DE1-64C2531A233C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32C9F752-1A2E-4205-9DE1-64C2531A233C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32C9F752-1A2E-4205-9DE1-64C2531A233C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32C9F752-1A2E-4205-9DE1-64C2531A233C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32C9F752-1A2E-4205-9DE1-64C2531A233C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
