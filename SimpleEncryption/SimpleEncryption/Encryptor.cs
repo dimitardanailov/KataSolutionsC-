@@ -10,10 +10,10 @@ namespace SimpleEncryption
         public static string Encrypt(string text, int n)
         {
             // If the input-string is null or empty return exactly this value!
-            if (String.IsNullOrEmpty(text) && text.Length == 1) return text;
+            if (String.IsNullOrEmpty(text)) return text;
 
             // If n is <= 0 then return the input text.
-            if (n <= 0) return text;
+            if (n <= 0 && text.Length == 1) return text;
 
             string output = text;
             while (n > 0) {
@@ -32,7 +32,14 @@ namespace SimpleEncryption
             // If n is <= 0 then return the input text.
             if (n <= 0 && encryptedText.Length == 1) return encryptedText;
 
-            return null;
+            string output = encryptedText;
+            while (n > 0)
+            {
+                output = Encryptor.DecodeString(output);
+                n--;
+            }
+
+            return output;
         }
 
         /**
@@ -58,6 +65,27 @@ namespace SimpleEncryption
             }
 
             return chars.ToString() + newString.ToString();
+        }
+
+        public static string DecodeString(string text) {
+            // How many encrypt interactions are completed.
+            int times = (int) (text.Length / TARGET_CHAR);
+
+            String chars = text.Substring(0, times);
+            String newString = text.Substring(times);
+
+            StringBuilder output = new StringBuilder();
+            for (int i = 0; i < times; i++) {
+                output.Append(newString.Substring(i, TARGET_CHAR - 1));
+                output.Append(chars.Substring(i, TARGET_CHAR - 1));
+            }
+
+            if (chars.Length < newString.Length) {
+                output.Append(newString.Substring(times));
+            }
+
+
+            return output.ToString();
         }
     }
 }
